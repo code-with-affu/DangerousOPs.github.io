@@ -1,0 +1,810 @@
+/* =======================================================================================================================
+                                                        Basic Codes    
+======================================================================================================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* =======================================================================================================================
+                                                        Header Container    
+======================================================================================================================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    padding: 0 10px 0 0;
+    position: relative;
+    background: #cde2e2;
+}
+
+/* =======================================================================================================================
+                                                        Header Container Left    
+======================================================================================================================= */
+
+.header .container-left {
+    background: #f2fafa;
+    max-width: 450px;
+    width: 500px;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%, 0% 0%);
+    padding: 5px;
+}
+
+.header .logo {
+    display: block;
+    padding: 10px;
+}
+
+.header .logo img {
+    width: 210px;
+}
+
+/* =======================================================================================================================
+                                                        Header Navigation Bar    
+======================================================================================================================= */
+
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.header nav ul {
+    list-style: none;
+}
+
+.header nav ul li {
+    position: relative;
+    float: left;
+    padding: 0;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    padding: 20px 25px;
+    display: block;
+    color: #333;
+    transition: 0.3s;
+}
+
+.header nav ul li a:hover {
+    color: #fff;
+    font-weight: bold;
+    background: rgb(27, 80, 80);
+}
+
+/* =======================================================================================================================
+                                                        Submenu    
+======================================================================================================================= */
+
+.header nav ul li ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 200px;
+    background: #cde2e2;
+    display: block;
+    display: none;
+}
+
+.header nav ul li ul li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+    transition: 0.5s ease-in-out 0%;
+}
+
+.header nav ul li:focus-within>ul,
+.header nav ul li:hover>ul {
+    display: block;
+}
+
+/* =======================================================================================================================
+                                                        Humburger    
+======================================================================================================================= */
+
+.humburger {
+    position: relative;
+    width: 30px;
+    height: 5px;
+    background: white;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.humburger::before,
+.humburger::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background: white;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.humburger::before {
+    top: -10px;
+    width: 30px;
+}
+
+.humburger::after {
+    top: 10px;
+    width: 30px;
+}
+
+.container-box {
+    display: none;
+}
+
+/* =======================================================================================================================
+                                                        Rotation of Humburger    
+======================================================================================================================= */
+
+.header input:checked~.humburger {
+    background: transparent;
+}
+
+.header input:checked~.humburger::before {
+    top: 0;
+    transform: rotate(-45deg);
+    width: 32px;
+}
+
+.header input:checked~.humburger::after {
+    top: 0;
+    transform: rotate(45deg);
+    width: 32px;
+}
+
+#menubar,
+.humburger {
+    display: none;
+}
+
+/* =======================================================================================================================
+                                                        Slider    
+======================================================================================================================= */
+
+.m-slider {
+    position: relative;
+}
+
+.img-slider {
+    background: url(IMG/slider-img/slider-1.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 60ch;
+    animation: slider 18s linear infinite;
+}
+
+.img-slider {
+    position: relative;
+}
+
+@keyframes slider {
+
+    0% {
+        background: url(IMG/slider-img/slider-1.jpg);
+        background-size: 100% 100%;
+    }
+
+    25% {
+        background: url(IMG/slider-img/slider-2.jpg);
+        background-size: 100% 100%;
+    }
+
+    50% {
+        background: url(IMG/slider-img/slider-3.jpg);
+        background-size: 100% 100%;
+    }
+
+}
+
+/* =======================================================================================================================
+                                                        Services Container    
+======================================================================================================================= */
+
+.section1 {
+    display: block;
+    position: sticky;
+}
+
+.content-1 {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.content-1 h1 {
+    padding: 0 0 60px;
+    font-size: 20px;
+    color: #43a5a5;
+}
+
+.content-1 h2 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/* =======================================================================================================================
+                                                    Services Container Content    
+======================================================================================================================= */
+
+.whole-containers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.whole-containers .content {
+    padding: 50px 10px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, .1);
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 20% 10%;
+    overflow: hidden;
+}
+
+.whole-containers .content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #bbd3d3;
+    z-index: -1;
+    transition: 0.3s ease;
+    top: 0;
+    border-radius: 0 0 50px 30px;
+}
+
+.whole-containers .content:hover:before {
+    height: 100%;
+}
+
+.whole-containers .content h1 {
+    font-size: 30px;
+    padding: 30px 0;
+}
+
+.whole-containers .content .fas {
+    font-size: 40px;
+    padding: 0 0 20px;
+}
+
+.whole-containers .content p {
+    width: 100%;
+}
+
+.whole-containers .content button {
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
+    background: rgb(241, 240, 240);
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+
+.whole-containers .content button:hover {
+    color: #43a5a5;
+}
+
+/* =======================================================================================================================
+                                                    About Container    
+======================================================================================================================= */
+
+.about-research {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 0;
+    background: #cde2e257;
+}
+
+.content-a-1 {
+    display: block;
+    padding: 20px;
+    width: 50%;
+}
+
+.content-a-1 h3 {
+    color: #0e3d3d;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.content-a-1 h1 {
+    font-size: 35px;
+    padding: 20px 0;
+}
+
+.content-a-1 p {
+    padding: 20px 0;
+    color: black;
+    font-weight: bold;
+}
+
+.content-a-1 .para-opacity {
+    padding: 20px 0;
+    color: rgb(163, 161, 161);
+    font-weight: 500;
+}
+
+.content-a-1 .fas {
+    padding: 10px 3px;
+    font-size: 18px;
+    color: #0e3d3d;
+}
+
+.content-a-1 h4 {
+    font-size: 18px;
+    padding: 0;
+}
+
+.content-a-1 .btn {
+    padding: 20px 30px;
+    margin: 20px 0;
+    font-weight: bold;
+    border-radius: 50px;
+    background: #0e3d3d;
+    color: white;
+    border: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.content-a-1 .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #000;
+    z-index: -1;
+    transition: 0.3s ease;
+    top: 0;
+    border-radius: 50px;
+}
+
+.content-a-1 .btn:hover::before {
+    height: 100%;
+}
+
+.container-a-2 img {
+    width: 100%;
+    padding: 10px;
+}
+
+/* =======================================================================================================================
+                                                    Event Container    
+======================================================================================================================= */
+
+.events {
+    background: url(IMG/event\ -1.png) 100% 100% no-repeat #43a5a577;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-box-event {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-1 {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.event-1 h1 {
+    padding: 10px;
+    color: #0e3d3d;
+}
+
+.event-2 {
+    width: 45%;
+    padding: 20px;
+    background: white;
+    margin: 40px;
+    border-radius: 30px;
+    transition: 0.5s all ease;
+}
+
+.event-2:hover {
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.301);
+}
+
+.event-2 h1 {
+    font-size: 28px;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.event-2 p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.event-2 .events-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.event-2 .events-links button {
+    padding: 10px 20px;
+    border: none;
+    background: lightgray;
+    font-weight: bold;
+    color: black;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+.event-2 .events-links button:hover {
+    background: #43a5a5;
+    color: white;
+}
+
+.event-2 .events-links span {
+    display: block;
+    padding: 10px;
+}
+
+.event-2 .events-links span .fas {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid rgb(153, 153, 153);
+    color: rgb(173, 173, 173);
+    border-radius: 50%;
+    transition: 0.2s all ease;
+}
+
+.event-2 .events-links span .fas:hover {
+    background: #43a5a5;
+    border: none;
+    padding: 12px;
+    color: white;
+}
+
+/* =======================================================================================================================
+                                                        Footer    
+======================================================================================================================= */
+
+.footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.footer .container-f-1 {
+    width: 30%;
+}
+
+.footer .container-f-1 img {
+    width: 75%;
+    padding: 20px 0;
+}
+
+.footer .container-f-1 p {
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.footer .container-f-1 ul {
+    list-style: none;
+}
+
+.footer .container-f-1 ul li {
+    padding: 10px 0;
+}
+
+.footer .container-f-1 ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s all ease;
+}
+
+.footer .container-f-1 ul li a:hover {
+    color: #16a7a7;
+}
+
+.footer .container-f-1 .fas {
+    padding: 0 10px 0 0;
+}
+
+/* =================================================================== */
+
+.footer .container-f-2 {
+    width: 30%;
+    padding: 10px;
+}
+
+.footer .container-f-2 h1 {
+    padding: 10px;
+    margin: 0px 0 30px;
+}
+
+.footer .container-f-2 ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.footer .container-f-2 ul li {
+    padding: 10px;
+}
+
+.footer .container-f-2 ul li a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s all ease;
+}
+
+.footer .container-f-2 ul li a:hover {
+    color: #16a7a7;
+}
+
+/* =================================================================== */
+
+.footer .container-f-3 {
+    width: 20%;
+    padding: 10px;
+}
+
+.footer .container-f-3 h1 {
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+.footer .container-f-3 p {
+    padding: 10px 0;
+    transition: 0.3s all ease-in-out;
+}
+
+.footer .container-f-3 p:hover {
+    color: #43a5a5;
+}
+
+/* =================================================================== */
+
+.footer .container-f-4 {
+    width: 30%;
+    padding: 10px;
+}
+
+.footer .container-f-4 h1 {
+    padding: 10px 0;
+}
+
+.footer .container-f-4 p {
+    padding: 20px 0;
+}
+
+.footer .container-f-4 .container-input {
+    position: relative;
+}
+
+.footer .container-f-4 input {
+    padding: 10px 7px;
+}
+
+.footer .container-f-4 .btn {
+    position: absolute;
+    top: 0;
+    background: #0e3d3d;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+}
+
+
+
+
+
+/* =======================================================================================================================
+                                                        Media Querry    
+======================================================================================================================= */
+
+@media screen and (max-width: 991px) {
+
+    /* =======================================================================================================================
+                                                        Humburger    
+======================================================================================================================= */
+
+    .humburger {
+        display: block;
+    }
+
+    /* =======================================================================================================================
+                                                        Container Left header    
+======================================================================================================================= */
+
+    .header .container-left {
+        width: 300px;
+        padding: 10px;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        border-bottom: 3px solid #16a7a7;
+    }
+
+    /* =======================================================================================================================
+                                                        Navigation Bar    
+======================================================================================================================= */
+
+
+    .header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: #bbd3d3;
+        padding: 92px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        display: none;
+    }
+
+    .header nav ul li {
+        width: 100%;
+        border-bottom: 1.5px solid #0e3d3d;
+    }
+
+    .header nav ul li a:hover {
+        box-shadow: none;
+        border-left: 5px solid #ffffff;
+        background: rgb(7, 77, 7);
+        color: white;
+    }
+
+    .header nav ul li:nth-child(1) {
+        border-top: 1.5px solid #0e3d3d;
+    }
+
+    #menubar:checked~nav {
+        display: initial;
+        transition: left 0.5s all ease-in-out;
+    }
+
+    /* =======================================================================================================================
+                                                        Submenu    
+======================================================================================================================= */
+
+    .header nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #cde2e2;
+        display: block;
+        display: none;
+    }
+
+    .header nav ul li ul li {
+        width: 100%;
+        border-bottom: 0.5px solid #333;
+    }
+
+    .header nav ul li ul li a:hover {
+        background: rgb(20, 116, 20);
+    }
+
+    /* =======================================================================================================================
+                                                        Slider    
+======================================================================================================================= */
+
+    .img-slider {
+        width: 100%;
+        height: 350px;
+    }
+
+    /* =======================================================================================================================
+                                                    Services Container Content    
+======================================================================================================================= */
+
+    .whole-containers {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* =======================================================================================================================
+                                                    About Container    
+======================================================================================================================= */
+
+    .about-research {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 5px;
+        margin: 10px 0;
+        background: rgba(0, 0, 0, .1);
+    }
+
+    .about-research .content-a-1 {
+        width: 100%;
+    }
+
+    /*=======================================================================================================================
+                                                    Events   
+======================================================================================================================= */
+
+
+    .flex-box-event {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .flex-box-event .event-2 {
+        width: 92%;
+        padding: 30px;
+        margin: 10px;
+
+    }
+
+    /*=======================================================================================================================
+                                                    Footer   
+======================================================================================================================= */
+
+    .footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer .container-f-1 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .footer .container-f-2 {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .footer .container-f-3 {
+        width: 100%;
+    }
+
+    .footer .container-f-4 {
+        width: 100%;
+    }
+    
+}
