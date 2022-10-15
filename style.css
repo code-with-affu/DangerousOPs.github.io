@@ -1004,12 +1004,17 @@ p {
 
     .footer .firstcol {
         margin: 10px 0 50px;
+        width: 100%;
     }
 
     .footer .secondcol {
         margin: 10px 0 70px;
         width: 100%;
         padding: 30px;
+    }
+    
+    .footer .thirdcol {
+        width: 100%;
     }
 
     .footer form input {
